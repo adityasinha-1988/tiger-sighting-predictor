@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adityasinha-1988.github.io/tiger-sighting-predictor/sitemap.xml
