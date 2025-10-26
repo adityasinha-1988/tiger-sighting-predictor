@@ -1,0 +1,655 @@
+// Tiger Reserves Data
+const tigerData = {
+  overview: {
+    national_population: 3682,
+    population_range: '3,167 to 3,925',
+    global_percentage: 75,
+    total_reserves: 58,
+    total_area_km2: 75000,
+    year: 2022
+  },
+  top_states: [
+    { name: 'Madhya Pradesh', population: 785 },
+    { name: 'Karnataka', population: 563 },
+    { name: 'Uttarakhand', population: 560 }
+  ],
+  tiger_reserves: [
+    {
+      name: 'Corbett',
+      state: 'Uttarakhand',
+      total_area: 1288.31,
+      core_area: 821.99,
+      population: 260,
+      density: 31.63,
+      topography: 'Sub-Himalayan belt with hills, riverine belts, marshy depressions, and grasslands',
+      best_months: ['March', 'April', 'May', 'June'],
+      zones: ['Dhikala', 'Bijrani', 'Jhirna', 'Dhela', 'Garjia', 'Durga Devi'],
+      highlights: 'Highest tiger population in India, vast grasslands, Ramganga river'
+    },
+    {
+      name: 'Bandipur',
+      state: 'Karnataka',
+      total_area: 1456.3,
+      core_area: 872.24,
+      population: 150,
+      density: 17.19,
+      topography: 'Tropical deciduous forests',
+      best_months: ['October', 'November', 'December'],
+      zones: ['Multiple zones'],
+      highlights: 'Part of Nilgiri Biosphere Reserve'
+    },
+    {
+      name: 'Nagarhole',
+      state: 'Karnataka',
+      total_area: 1205.76,
+      core_area: 643.35,
+      population: 141,
+      density: 21.92,
+      topography: 'Dense forests along river',
+      best_months: ['February'],
+      zones: ['Kabini River area'],
+      highlights: 'Kabini River boat safaris'
+    },
+    {
+      name: 'Bandhavgarh',
+      state: 'Madhya Pradesh',
+      total_area: 1536.93,
+      core_area: 716.9,
+      population: 135,
+      density: 18.83,
+      topography: 'Sharp crested hills of Vindhyan range, steep valleys, expansive grasslands',
+      best_months: ['March', 'April', 'December'],
+      zones: ['Tala', 'Magadhi', 'Khitauli'],
+      highlights: 'One of the highest tiger densities in the world'
+    },
+    {
+      name: 'Dudhwa',
+      state: 'Uttar Pradesh',
+      total_area: 2201.77,
+      core_area: 1093.79,
+      population: 135,
+      density: 12.34,
+      topography: 'Terai grasslands and wetlands',
+      best_months: ['November', 'December', 'January'],
+      zones: ['Multiple zones'],
+      highlights: 'Swamp deer habitat'
+    },
+    {
+      name: 'Mudumalai',
+      state: 'Tamil Nadu',
+      total_area: 688.59,
+      core_area: 321.0,
+      population: 114,
+      density: 35.51,
+      topography: 'Tropical forests',
+      best_months: ['March', 'April', 'May'],
+      zones: ['Multiple zones'],
+      highlights: 'Highest tiger density'
+    },
+    {
+      name: 'Kanha',
+      state: 'Madhya Pradesh',
+      total_area: 2051.79,
+      core_area: 917.43,
+      population: 105,
+      density: 11.45,
+      topography: 'Maikal hills with vast grasslands, Sal and bamboo forests',
+      best_months: ['March', 'April', 'May', 'June', 'November', 'December'],
+      zones: ['Kanha Zone', 'Mukki Zone', 'Kisli', 'Sarhi'],
+      highlights: 'Inspiration for The Jungle Book, rare Hard-ground Barasingha'
+    },
+    {
+      name: 'Kaziranga',
+      state: 'Assam',
+      total_area: 1173.58,
+      core_area: 625.58,
+      population: 104,
+      density: 16.62,
+      topography: 'Grasslands and wetlands',
+      best_months: ['November', 'December', 'January', 'February'],
+      zones: ['Multiple zones'],
+      highlights: 'Famous for one-horned rhinos'
+    },
+    {
+      name: 'Sunderbans',
+      state: 'West Bengal',
+      total_area: 2584.89,
+      core_area: 1699.62,
+      population: 100,
+      density: 5.88,
+      topography: 'Mangrove forests',
+      best_months: ['November', 'December', 'January', 'February'],
+      zones: ['Multiple zones'],
+      highlights: 'Unique mangrove ecosystem, swimming tigers'
+    },
+    {
+      name: 'Tadoba-Andhari',
+      state: 'Maharashtra',
+      total_area: 1727.59,
+      core_area: 625.82,
+      population: 97,
+      density: 15.5,
+      topography: 'Undulating landscape with tropical dry deciduous forests, Teak and Bamboo',
+      best_months: ['February', 'March', 'April', 'May', 'June'],
+      zones: ['Moharli', 'Kolara', 'Navegaon', 'Agarzari', 'Junona'],
+      highlights: 'Famous for frequent and reliable sightings, Tiger Sighting Index of 82.14%'
+    },
+    {
+      name: 'Ranthambore',
+      state: 'Rajasthan',
+      total_area: 1411.29,
+      core_area: 1113.36,
+      population: 57,
+      density: 5.12,
+      topography: 'Dry deciduous forests, grassy meadows, rocky hills, lakes',
+      best_months: ['March', 'April', 'May', 'October', 'December'],
+      zones: ['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4', 'Zone 5', 'Zone 6', 'Zone 7', 'Zone 8', 'Zone 9', 'Zone 10'],
+      highlights: 'Historical ruins, famous lakes (Padam Talab, Malik Talab), daytime tiger activity'
+    },
+    {
+      name: 'Pench (MP)',
+      state: 'Madhya Pradesh',
+      total_area: 1179.63,
+      core_area: 411.33,
+      population: 77,
+      density: 18.72,
+      topography: 'Tropical forests',
+      best_months: ['January'],
+      zones: ['Turia'],
+      highlights: 'Jungle Book inspiration'
+    }
+  ],
+  monthly_recommendations: {
+    October: [
+      {
+        rank: 1,
+        reserve: 'Ranthambore',
+        zones: ['Zones 2, 3, 4'],
+        rationale: 'Post-monsoon greenery, lake zones best for tiger territories'
+      },
+      {
+        rank: 2,
+        reserve: 'Bandhavgarh',
+        zones: ['Tala', 'Magadhi'],
+        rationale: 'Lush scenery, high tiger activity'
+      }
+    ],
+    November: [
+      {
+        rank: 1,
+        reserve: 'Kanha',
+        zones: ['Mukki', 'Kanha'],
+        rationale: 'Pleasant weather, excellent for birdwatching'
+      },
+      {
+        rank: 2,
+        reserve: 'Corbett',
+        zones: ['Bijrani', 'Jhirna'],
+        rationale: 'Dhikala opens mid-month, ideal weather'
+      }
+    ],
+    December: [
+      {
+        rank: 1,
+        reserve: 'Ranthambore',
+        zones: ['Zones 2, 3, 6'],
+        rationale: 'Peak tourist season, cool weather, tigers basking in sun'
+      },
+      {
+        rank: 2,
+        reserve: 'Kanha',
+        zones: ['Mukki', 'Kanha'],
+        rationale: 'Misty mornings, magical atmosphere'
+      }
+    ],
+    January: [
+      {
+        rank: 1,
+        reserve: 'Pench (MP)',
+        zones: ['Turia'],
+        rationale: 'Jungle Book setting, frequent sightings, cool weather'
+      },
+      {
+        rank: 2,
+        reserve: 'Corbett',
+        zones: ['Dhikala', 'Bijrani'],
+        rationale: 'Cold mornings, grasslands offer good visibility'
+      }
+    ],
+    February: [
+      {
+        rank: 1,
+        reserve: 'Tadoba-Andhari',
+        zones: ['Moharli', 'Kolara'],
+        rationale: 'Vegetation thinning, fewer crowds'
+      },
+      {
+        rank: 2,
+        reserve: 'Nagarhole',
+        zones: ['Kabini River area'],
+        rationale: 'Boat safaris, pleasant weather'
+      }
+    ],
+    March: [
+      {
+        rank: 1,
+        reserve: 'Bandhavgarh',
+        zones: ['Tala', 'Magadhi'],
+        rationale: 'Flame of Forest blooms, rising temperatures draw tigers to water'
+      },
+      {
+        rank: 2,
+        reserve: 'Ranthambore',
+        zones: ['Zones 3, 4, 5'],
+        rationale: 'Thinning foliage, tigers visible at lakes'
+      }
+    ],
+    April: [
+      {
+        rank: 1,
+        reserve: 'Tadoba-Andhari',
+        zones: ['Moharli', 'Kolara', 'Agarzari'],
+        rationale: 'Prime sighting month, high sighting index'
+      },
+      {
+        rank: 2,
+        reserve: 'Bandhavgarh',
+        zones: ['Tala', 'Magadhi'],
+        rationale: 'High density + summer conditions = exceptional sightings'
+      }
+    ],
+    May: [
+      {
+        rank: 1,
+        reserve: 'Tadoba-Andhari',
+        zones: ['All Zones'],
+        rationale: 'Peak season, highest probability across all zones'
+      },
+      {
+        rank: 2,
+        reserve: 'Ranthambore',
+        zones: ['Zones 1-6'],
+        rationale: 'Tigers cooling off in lakes, extended viewing'
+      }
+    ],
+    June: [
+      {
+        rank: 1,
+        reserve: 'Corbett',
+        zones: ['Dhikala', 'Bijrani'],
+        rationale: 'Last chance before monsoon closure, pre-monsoon showers'
+      },
+      {
+        rank: 2,
+        reserve: 'Tadoba-Andhari',
+        zones: ['All Zones'],
+        rationale: 'Excellent sightings until closure'
+      }
+    ]
+  },
+  months: [
+    { name: 'January', season: 'Winter' },
+    { name: 'February', season: 'Winter' },
+    { name: 'March', season: 'Summer' },
+    { name: 'April', season: 'Summer' },
+    { name: 'May', season: 'Summer' },
+    { name: 'June', season: 'Summer' },
+    { name: 'July', season: 'Monsoon' },
+    { name: 'August', season: 'Monsoon' },
+    { name: 'September', season: 'Monsoon' },
+    { name: 'October', season: 'Winter' },
+    { name: 'November', season: 'Winter' },
+    { name: 'December', season: 'Winter' }
+  ]
+};
+
+// State Management
+let currentReserves = [...tigerData.tiger_reserves];
+let selectedMonth = null;
+let favoriteReserves = [];
+
+// Initialize App
+document.addEventListener('DOMContentLoaded', () => {
+  initializeNavigation();
+  renderReserves();
+  renderMonthSelector();
+  populateStateFilter();
+  setupEventListeners();
+  animateOnScroll();
+});
+
+// Navigation
+function initializeNavigation() {
+  const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  
+  // Scroll effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+  
+  // Hamburger menu
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+  
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        navLinks.classList.remove('active');
+      }
+    });
+  });
+}
+
+// Render Reserve Cards
+function renderReserves(reserves = currentReserves) {
+  const grid = document.getElementById('reservesGrid');
+  grid.innerHTML = '';
+  
+  reserves.forEach(reserve => {
+    const card = createReserveCard(reserve);
+    grid.appendChild(card);
+  });
+}
+
+function createReserveCard(reserve) {
+  const card = document.createElement('div');
+  card.className = 'reserve-card';
+  
+  const densityClass = reserve.density > 20 ? 'density-high' : 
+                       reserve.density > 12 ? 'density-medium' : 'density-low';
+  
+  card.innerHTML = `
+    <div class="reserve-header">
+      <div class="reserve-name">${reserve.name}</div>
+      <div class="reserve-state">📍 ${reserve.state}</div>
+    </div>
+    <div class="reserve-stats">
+      <div class="stat-item">
+        <div class="stat-label-small">Population</div>
+        <div class="stat-value">🐅 ${reserve.population}</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label-small">Total Area</div>
+        <div class="stat-value">${reserve.total_area.toFixed(0)} km²</div>
+      </div>
+    </div>
+    <div class="density-badge ${densityClass}">
+      Density: ${reserve.density.toFixed(2)} / 100km²
+    </div>
+    <button class="btn-view-details">View Details</button>
+  `;
+  
+  card.querySelector('.btn-view-details').addEventListener('click', () => {
+    openReserveModal(reserve);
+  });
+  
+  return card;
+}
+
+// Reserve Modal
+function openReserveModal(reserve) {
+  const modal = document.getElementById('reserveModal');
+  const modalBody = document.getElementById('modalBody');
+  
+  modalBody.innerHTML = `
+    <div class="modal-reserve-name">${reserve.name}</div>
+    <div class="modal-reserve-state">📍 ${reserve.state}</div>
+    
+    <div class="modal-stats-grid">
+      <div class="modal-stat">
+        <div class="modal-stat-value">🐅 ${reserve.population}</div>
+        <div class="modal-stat-label">Tiger Population</div>
+      </div>
+      <div class="modal-stat">
+        <div class="modal-stat-value">${reserve.density.toFixed(2)}</div>
+        <div class="modal-stat-label">Density / 100km²</div>
+      </div>
+      <div class="modal-stat">
+        <div class="modal-stat-value">${reserve.total_area.toFixed(0)} km²</div>
+        <div class="modal-stat-label">Total Area</div>
+      </div>
+      <div class="modal-stat">
+        <div class="modal-stat-value">${reserve.core_area.toFixed(0)} km²</div>
+        <div class="modal-stat-label">Core Area</div>
+      </div>
+    </div>
+    
+    ${reserve.topography ? `
+      <div class="modal-section">
+        <div class="modal-section-title">🌲 Topography</div>
+        <div class="modal-section-content">${reserve.topography}</div>
+      </div>
+    ` : ''}
+    
+    ${reserve.zones && reserve.zones.length > 0 ? `
+      <div class="modal-section">
+        <div class="modal-section-title">🎯 Safari Zones</div>
+        <div class="zones-list">
+          ${reserve.zones.map(zone => `<span class="zone-chip">${zone}</span>`).join('')}
+        </div>
+      </div>
+    ` : ''}
+    
+    ${reserve.best_months && reserve.best_months.length > 0 ? `
+      <div class="modal-section">
+        <div class="modal-section-title">📅 Best Months to Visit</div>
+        <div class="best-months-list">
+          ${reserve.best_months.map(month => `<span class="best-month-chip">${month}</span>`).join('')}
+        </div>
+      </div>
+    ` : ''}
+    
+    ${reserve.highlights ? `
+      <div class="modal-section">
+        <div class="modal-section-title">⭐ Highlights</div>
+        <div class="modal-section-content">${reserve.highlights}</div>
+      </div>
+    ` : ''}
+  `;
+  
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  const modal = document.getElementById('reserveModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Month Selector
+function renderMonthSelector() {
+  const selector = document.getElementById('monthSelector');
+  
+  tigerData.months.forEach(month => {
+    const card = document.createElement('div');
+    card.className = 'month-card';
+    card.dataset.month = month.name;
+    
+    const seasonClass = `season-${month.season.toLowerCase()}`;
+    
+    card.innerHTML = `
+      <div class="month-name">${month.name}</div>
+      <span class="season-badge ${seasonClass}">${month.season}</span>
+    `;
+    
+    card.addEventListener('click', () => selectMonth(month.name));
+    selector.appendChild(card);
+  });
+}
+
+function selectMonth(monthName) {
+  selectedMonth = monthName;
+  
+  // Update active state
+  document.querySelectorAll('.month-card').forEach(card => {
+    card.classList.remove('active');
+    if (card.dataset.month === monthName) {
+      card.classList.add('active');
+    }
+  });
+  
+  // Show recommendations
+  displayMonthlyRecommendations(monthName);
+}
+
+function displayMonthlyRecommendations(monthName) {
+  const container = document.getElementById('monthlyRecommendations');
+  const recommendations = tigerData.monthly_recommendations[monthName];
+  
+  if (!recommendations || recommendations.length === 0) {
+    container.innerHTML = `
+      <div style="text-align: center; padding: 2rem; color: #6B7280;">
+        <p>No specific recommendations available for ${monthName}.</p>
+        <p style="margin-top: 0.5rem;">Most reserves are accessible year-round except during monsoon months (July-September).</p>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = '';
+  
+  recommendations.forEach(rec => {
+    const reserve = tigerData.tiger_reserves.find(r => r.name === rec.reserve);
+    const card = document.createElement('div');
+    card.className = 'recommendation-card';
+    
+    card.innerHTML = `
+      <div class="rank-badge">${rec.rank === 1 ? '1st' : '2nd'}</div>
+      <div class="recommendation-header">
+        <div class="recommendation-reserve">${rec.reserve}</div>
+        <div class="recommendation-zones">🎯 Recommended Zones: ${rec.zones.join(', ')}</div>
+      </div>
+      <div class="recommendation-rationale">${rec.rationale}</div>
+      ${reserve ? `
+        <div class="recommendation-stats">
+          <div class="stat-item">
+            <div class="stat-label-small">Population</div>
+            <div class="stat-value">🐅 ${reserve.population}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label-small">Density</div>
+            <div class="stat-value">${reserve.density.toFixed(2)} / 100km²</div>
+          </div>
+        </div>
+      ` : ''}
+    `;
+    
+    container.appendChild(card);
+  });
+}
+
+// Filters and Search
+function populateStateFilter() {
+  const select = document.getElementById('stateFilter');
+  const states = [...new Set(tigerData.tiger_reserves.map(r => r.state))].sort();
+  
+  states.forEach(state => {
+    const option = document.createElement('option');
+    option.value = state;
+    option.textContent = state;
+    select.appendChild(option);
+  });
+}
+
+function setupEventListeners() {
+  // State filter
+  document.getElementById('stateFilter').addEventListener('change', applyFilters);
+  
+  // Sort
+  document.getElementById('sortBy').addEventListener('change', applySort);
+  
+  // Search
+  document.getElementById('searchReserve').addEventListener('input', applySearch);
+  
+  // Modal close
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('modalOverlay').addEventListener('click', closeModal);
+  
+  // Escape key to close modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+}
+
+function applyFilters() {
+  const state = document.getElementById('stateFilter').value;
+  const searchTerm = document.getElementById('searchReserve').value.toLowerCase();
+  
+  let filtered = [...tigerData.tiger_reserves];
+  
+  if (state !== 'all') {
+    filtered = filtered.filter(r => r.state === state);
+  }
+  
+  if (searchTerm) {
+    filtered = filtered.filter(r => 
+      r.name.toLowerCase().includes(searchTerm) || 
+      r.state.toLowerCase().includes(searchTerm)
+    );
+  }
+  
+  currentReserves = filtered;
+  applySort();
+}
+
+function applySearch() {
+  applyFilters();
+}
+
+function applySort() {
+  const sortBy = document.getElementById('sortBy').value;
+  
+  currentReserves.sort((a, b) => {
+    switch(sortBy) {
+      case 'density':
+        return b.density - a.density;
+      case 'population':
+        return b.population - a.population;
+      case 'area':
+        return b.total_area - a.total_area;
+      default:
+        return 0;
+    }
+  });
+  
+  renderReserves(currentReserves);
+}
+
+// Scroll Animations
+function animateOnScroll() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+  
+  // Observe elements that should animate
+  document.querySelectorAll('.overview-card, .reserve-card, .model-card, .season-panel').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(el);
+  });
+}
+
+// Initial sort by density (highest first)
+applySort();
